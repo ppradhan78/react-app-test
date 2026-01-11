@@ -1,14 +1,15 @@
 import { Routes, Route } from "react-router-dom";
-import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
+import Header from "./app/components/layout/Header";
 
-import Home from "./pages/Home";
-import Reports from "./pages/Reports";
-import Settings from "./pages/Settings";
-import Profile from "./pages/Profile";
+import Footer from "./app/components/layout/Footer";
 
-import "./components/layout/Layout.css";
-import Banner from "./components/layout/banner";
+import Home from "./app/pages/Home";
+import Reports from "./app/pages/Reports";
+import Settings from "./app/pages/Settings";
+import Profile from "./app/pages/Profile";
+
+import "./app/components/layout/Layout.css";
+import Banner from "./app/components/layout/banner";
 
 export default function App() {
   return (
