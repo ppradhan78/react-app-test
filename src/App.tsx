@@ -10,6 +10,11 @@ import Profile from "./app/pages/Profile";
 
 import "./app/components/layout/Layout.css";
 import Banner from "./app/components/layout/banner";
+import CategoryListPage from "./app/pages/Category/CategoryListPage";
+import { CategoryProvider } from "./app/context/CategoryContext";
+import RegionListPage from "./app/pages/Region/RegionListPage";
+import RegionFormPage from "./app/pages/Region/RegionFormPage";
+import RegionDetailsPage from "./app/pages/Region/RegionDetailsPage";
 
 export default function App() {
   return (
@@ -24,6 +29,12 @@ export default function App() {
       <main className="content">
         <Routes>
           <Route path="/" element={<Home />} />
+
+          <Route path="/regions" element={<RegionListPage />} />
+          <Route path="/regions/new" element={<RegionFormPage />} />
+          <Route path="/regions/edit/:id" element={<RegionFormPage />} />
+          <Route path="/regions/:id" element={<RegionDetailsPage />} />
+
           <Route path="/reports" element={<Reports />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/profile" element={<Profile />} />

@@ -1,0 +1,19 @@
+.categories-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+/* Optional: control widths */
+.categories-layout > *:nth-child(1) {
+  flex: 2; /* Category list */
+}
+
+.categories-layout > *:nth-child(2) {
+  flex: 1; /* Details */
+}
+
+.categories-layout > *:nth-child(3) {
+  flex: 1; /* Form */
+}

@@ -1,0 +1,150 @@
+Step 1: Identify business domains in Northwind
+
+If you look at Northwind tables, they naturally group into bounded contexts.
+
+Core domains in Northwind
+
+1. Catalog / Product domain
+Responsible for what you sell.
+
+Tables:
+
+Products
+
+Categories
+
+Suppliers (sometimes shared, sometimes owned here)
+
+Microservice:
+Product Service
+
+Manage products
+
+Manage categories
+
+Product pricing
+
+Product availability
+
+2. Sales / Order domain
+Responsible for selling and order lifecycle.
+
+Tables:
+
+Orders
+
+OrderDetails
+
+Microservice:
+Order Service
+
+Create orders
+
+Calculate totals
+
+Track order status
+
+Apply discounts
+
+3. Customer domain
+Responsible for who you sell to.
+
+Tables:
+
+Customers
+
+CustomerDemographics (optional)
+
+Microservice:
+Customer Service
+
+Customer profiles
+
+Customer addresses
+
+Customer segmentation
+
+4. Employee / HR domain
+Responsible for internal users.
+
+Tables:
+
+Employees
+
+EmployeeTerritories
+
+Microservice:
+Employee Service
+
+Employee info
+
+Reporting hierarchy
+
+Sales assignments
+
+5. Shipping / Logistics domain
+Responsible for delivery.
+
+Tables:
+
+Shippers
+
+Orders (shipping part only)
+
+Microservice:
+Shipping Service
+
+Shipping providers
+
+Shipment tracking
+
+Delivery status
+
+6. Geography / Reference domain
+Usually a supporting domain.
+
+Tables:
+
+Regions
+
+Territories
+
+Microservice:
+Region Service
+
+Regions
+
+Territories
+
+Step 2: Assign database per microservice
+
+Each microservice owns its own database schema (or its own database).
+
+Example:
+
+ProductDB
+  - Products
+  - Categories
+  - Suppliers
+
+OrderDB
+  - Orders
+  - OrderItems
+
+CustomerDB
+  - Customers
+
+EmployeeDB
+  - Employees
+
+ShippingDB
+  - Shippers
+  - Shipments
+
+RegionDB
+  - Regions
+  - Territories
+
+
+Important rule:
+No microservice directly reads another service’s database.
