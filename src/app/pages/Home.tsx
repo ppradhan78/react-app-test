@@ -18,7 +18,7 @@ const domains = [
   },
   {
     title: "Sales / Order",
-    color: "#E8F5E9",
+    color: "#becfbf",
     items: ["Orders", "Order Items", "Discounts", "Order Status"],
     path: "/orders",
   },
@@ -41,7 +41,7 @@ const domains = [
   },
   {
     title: "Shipping / Logistics",
-    color: "#E1F5FE",
+    color: "#d3dadd",
     items: ["Shippers", "Shipping Rates", "Delivery Status", "Tracking"],
     path: "/shipping",
   },
@@ -56,6 +56,12 @@ const domains = [
     color: "#f3dbaf",
     items: ["Users", "Roles", "Permission"],
     path: "/settings",
+  },
+  {
+    title: "Research",
+    color: "#bda9c0",
+    items: ["MUI", "Others"],
+    path: "/Research",
   },
 ];
 
